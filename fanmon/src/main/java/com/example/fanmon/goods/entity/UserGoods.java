@@ -1,8 +1,6 @@
-package com.example.fanmon.goods;
+package com.example.fanmon.goods.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.UUID;
@@ -13,7 +11,10 @@ import java.util.UUID;
 public class UserGoods {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "usergoodsuuid", updatable = false, nullable = false)
     private UUID usergoodsuuid;
+
     private UUID useruuid;
     private UUID goodsuuid;
     private String cardinfo;
