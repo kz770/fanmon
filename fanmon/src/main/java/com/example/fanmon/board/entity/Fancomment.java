@@ -17,11 +17,15 @@ public class Fancomment {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "fanboarduuid", updatable = false, nullable = false)
-    private UUID fanboarduuid;
+    @ManyToOne
+    @JoinColumn(name="fanboarduuid")
+    private Fanboard fanboarduuid;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "useruuid", updatable = false, nullable = false)
-    private UUID useruuid;
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name = "useruuid", updatable = false, nullable = false)
+//    @ManyToOne
+//    @JoinColumn(name="useruuid")
+//    private User useruuid;
 
     private LocalDateTime postdate;
     private String content;

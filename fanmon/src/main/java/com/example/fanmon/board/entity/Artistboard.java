@@ -15,13 +15,16 @@ public class Artistboard {
     @Column(name = "artistboarduuid", updatable = false, nullable = false)
     private UUID artistboarduuid;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "groupartistuuid", updatable = false, nullable = false)
-    private UUID groupartistuuid;
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name = "groupartistuuid", updatable = false, nullable = false)
+//    @OneToOne
+//    @JoinColumn(name="groupartistuuid", nullable = false)
+//    private Groupartist groupartistuuid;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "artistuuid", updatable = false, nullable = false)
-    private UUID artistuuid;
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name = "artistuuid", updatable = false, nullable = false)
+//    @OneToMany(mappedBy = "artistboard")
+//    private List<Artist> artistuuid;
 
     private LocalDateTime postdate;
     private String content;

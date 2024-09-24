@@ -18,11 +18,15 @@ public class Boardnotice {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "fanboarduuid", updatable = false, nullable = false)
-    private UUID fanboarduuid;
+    @ManyToOne
+    @JoinColumn(name="fanboarduuid")
+    private Fanboard fanboarduuid;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "managementuuid", updatable = false, nullable = false)
-    private UUID managementuuid;
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name = "managementuuid", updatable = false, nullable = false)
+//    @ManyToOne
+//    @JoinColumn(name="managementuuid")
+//    private Management managementuuid;
 
     private String title;
     private LocalDateTime postdate;
