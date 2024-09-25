@@ -10,8 +10,14 @@ import java.util.UUID;
 @Table(name="chat")
 public class Chat {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID chatuuid;
+
+    @PrePersist
+    protected void onCreate() {
+        if (chatuuid==null){
+            this.chatuuid = UUID.randomUUID();
+        }
+    }
 
 //    @OneToOne(cascade = CascadeType.REMOVE)
 //    @JoinColumn(name="artistuuid", updatable = true, nullable = true)
