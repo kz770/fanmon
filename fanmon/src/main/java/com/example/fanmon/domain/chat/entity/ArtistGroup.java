@@ -10,12 +10,18 @@ import java.util.UUID;
 @Table(name="artistgroup")
 public class ArtistGroup {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID artistgroupuuid;
+    @PrePersist
+    protected void onCreate() {
+        if (artistgroupuuid==null){
+            this.artistgroupuuid = UUID.randomUUID();
+        }
+    }
 
 //    @ManyToOne(cascade = CascadeType.REMOVE)
 //    @JoinColumn(name="groupartistname", updatable = true, nullable = false)
 //    private GroupArtist groupArtist;
+
 
 //    @ManyToOne
 //    @JoinColumn(name="artistname", nullable = true)    //아티스트는 반드시 있어야함

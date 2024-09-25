@@ -10,8 +10,14 @@ import java.util.UUID;
 @Table(name="subscribe")
 public class Subscribe {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID subscribeuuid;
+
+    @PrePersist
+    protected void onCreate() {
+        if (subscribeuuid==null){
+            this.subscribeuuid = UUID.randomUUID();
+        }
+    }
 
 //    @ManyToOne(cascade = CascadeType.REMOVE)
 //    @JoinColumn(name="useruuid")
