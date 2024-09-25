@@ -20,7 +20,7 @@ public class Artistboard {
 //    @JoinColumn(name="artistuuid", nullable = false)
 //    private Artist artist=;
 
-    private LocalDateTime postdate;
+    private LocalDateTime createdat;
     private String content;
     private long likecount;
 }

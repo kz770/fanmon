@@ -20,7 +20,7 @@ public class Fanboard {
 //    private User user;
 
     private String title;
-    private LocalDateTime postdate;
+    private LocalDateTime createdat;
     private String content;
     private long likecount;
 }

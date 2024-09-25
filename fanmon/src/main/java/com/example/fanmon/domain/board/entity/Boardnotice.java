@@ -27,7 +27,7 @@ public class Boardnotice {
 //    private Management management;
 
     private String title;
-    private LocalDateTime postdate;
+    private LocalDateTime createdat;
     private String content;
 
 }

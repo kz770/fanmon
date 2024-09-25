@@ -25,7 +25,7 @@ public class Fancomment {
 //    @JoinColumn(name="useruuid")
 //    private User user;
 
-    private LocalDateTime postdate;
+    private LocalDateTime createdat;
     private String content;
     private long ref;
     private long level;
