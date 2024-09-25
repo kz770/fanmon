@@ -15,9 +15,15 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Management {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "managementuuid", updatable = false, nullable = false)
+    @Column(name = "managementuuid", nullable = false)
     private UUID managementuuid;
+
+    @PrePersist
+    public void generateUUID() {
+        if (managementuuid == null) {
+            managementuuid = UUID.randomUUID();
+        }
+    }
     private String email;
     private String password;
     private String name;

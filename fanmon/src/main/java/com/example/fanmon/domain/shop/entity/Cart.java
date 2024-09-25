@@ -1,4 +1,4 @@
-package com.example.fanmon.domain.management.entity;
+package com.example.fanmon.domain.shop.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,6 +17,7 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cartsequence", updatable = false, nullable = false)
     private Long crtsequence;
+
 /*    @ManyToOne
     @JoinColumn(name = "useruuid", referencedColumnName = "useruuid", insertable = true, updatable = true)
     private User user;
