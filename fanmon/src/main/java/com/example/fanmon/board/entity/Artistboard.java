@@ -15,6 +15,7 @@ public class Artistboard {
     @Column(name = "artistboarduuid", updatable = false, nullable = false)
     private UUID artistboarduuid;
 
+//    수정!
 //    @ManyToOne
 //    @JoinColumn(name="artistuuid", nullable = false)
 //    private Artist artistuuid;
