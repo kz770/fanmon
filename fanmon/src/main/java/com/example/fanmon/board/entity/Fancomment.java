@@ -21,8 +21,6 @@ public class Fancomment {
     @JoinColumn(name="fanboarduuid")
     private Fanboard fanboarduuid;
 
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "useruuid", updatable = false, nullable = false)
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
 //    private User useruuid;

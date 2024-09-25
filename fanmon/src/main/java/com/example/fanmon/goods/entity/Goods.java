@@ -15,8 +15,6 @@ public class Goods {
     @Column(name = "goodsuuid", updatable = false, nullable = false)
     private UUID goodsuuid;
 
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "managementuuid", updatable = false, nullable = false)
 //    @ManyToOne
 //    @JoinColumn(name="managementuuid", nullable = false)
 //    private Management managementuuid;

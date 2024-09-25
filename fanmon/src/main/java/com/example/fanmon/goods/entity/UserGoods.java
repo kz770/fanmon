@@ -15,14 +15,10 @@ public class UserGoods {
     @Column(name = "usergoodsuuid", updatable = false, nullable = false)
     private UUID usergoodsuuid;
 
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "useruuid", updatable = false, nullable = false)
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
 //    private User useruuid;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "useruuid", updatable = false, nullable = false)
     @ManyToOne
     @JoinColumn(name="goodsuuid")
     private Goods goodsuuid;

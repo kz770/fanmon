@@ -15,19 +15,9 @@ public class Fanboard {
     @Column(name = "fanboarduuid", updatable = false, nullable = false)
     private UUID fanboarduuid;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "artistuuid", updatable = false, nullable = false)
-    private UUID artistuuid;
-
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "useruuid", updatable = false, nullable = false)
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
 //    private User useruuid;
-
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "groupartistuuid", updatable = false, nullable = false)
-    private UUID groupartistuuid;
 
     private String title;
     private LocalDateTime postdate;

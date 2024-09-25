@@ -22,8 +22,6 @@ public class Boardnotice {
     @JoinColumn(name="fanboarduuid")
     private Fanboard fanboarduuid;
 
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "managementuuid", updatable = false, nullable = false)
 //    @ManyToOne
 //    @JoinColumn(name="managementuuid")
 //    private Management managementuuid;
