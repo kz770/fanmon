@@ -8,7 +8,7 @@ import java.util.UUID;
 @Entity
 @Data
 @Table(name="usergoods")
-public class UserGoods {
+public class Usergoods {
 
     @Id
     @Column(name = "usergoodsuuid", nullable = false)

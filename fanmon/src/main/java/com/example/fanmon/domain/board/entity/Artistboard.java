@@ -1,6 +1,6 @@
 package com.example.fanmon.domain.board.entity;
 
-import com.example.fanmon.domain.management.entity.Group;
+import com.example.fanmon.domain.artist.entity.Group;
 import jakarta.persistence.*;
 import lombok.Data;
 
