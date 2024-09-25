@@ -1,5 +1,6 @@
 package com.example.fanmon.domain.board.entity;
 
+import com.example.fanmon.domain.management.entity.Group;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,6 +15,10 @@ public class Fanboard {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "fanboarduuid", updatable = false, nullable = false)
     private UUID fanboarduuid;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="groupuuid")
+    private Group group;
 
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
