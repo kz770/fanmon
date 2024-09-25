@@ -23,7 +23,7 @@ public class Fancomment {
 
     @ManyToOne
     @JoinColumn(name="fanboarduuid")
-    private Fanboard fanboarduuid;
+    private Fanboard fanboard;
 
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
