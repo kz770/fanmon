@@ -22,15 +22,11 @@ public class Usergoods {
         }
     }
 
-//    @ManyToOne
+//    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="useruuid")
 //    private User user;
 
-    @ManyToOne
-    @JoinColumn(name="groupuuid")
-    private Group group;
-
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="goodsuuid")
     private Goods goods;
 

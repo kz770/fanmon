@@ -26,7 +26,7 @@ public class Artistboard {
     @JoinColumn(name="groupuuid")
     private Group group;
 
-//    @ManyToOne
+//    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="artistuuid", nullable = false)
 //    private Artist artist;
 

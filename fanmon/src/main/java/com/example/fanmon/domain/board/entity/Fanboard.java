@@ -27,7 +27,7 @@ public class Fanboard {
     @JoinColumn(name="groupuuid")
     private Group group;
 
-//    @ManyToOne
+//    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="useruuid")
 //    private User user;
 
@@ -35,7 +35,7 @@ public class Fanboard {
     private List<Boardnotice> boardnotice;
 
     @OneToMany(cascade = CascadeType.REMOVE)
-    private List<Fanboard> fanboard;
+    private List<Fancomment> fanconmment;
 
     private String title;
     private LocalDateTime createdat;

@@ -21,11 +21,11 @@ public class Fancomment {
         }
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="fanboarduuid")
     private Fanboard fanboard;
 
-//    @ManyToOne
+//    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="useruuid")
 //    private User user;
 

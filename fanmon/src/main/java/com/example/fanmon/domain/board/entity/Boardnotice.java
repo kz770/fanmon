@@ -22,11 +22,11 @@ public class Boardnotice {
         }
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="fanboarduuid")
     private Fanboard fanboard;
 
-//    @ManyToOne
+//    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name="managementuuid")
 //    private Management management;
 
