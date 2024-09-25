@@ -11,9 +11,15 @@ import java.util.UUID;
 @Table(name="fancomment")
 public class Fancomment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "fancommentuuid", updatable = false, nullable = false)
+    @Column(name = "fancommentuuid", nullable = false)
     private UUID fancommentuuid;
+
+    @PrePersist
+    public void generateUUID(){
+        if(fancommentuuid == null){
+            fancommentuuid = UUID.randomUUID();
+        }
+    }
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "fanboarduuid", updatable = false, nullable = false)

@@ -12,9 +12,15 @@ import java.util.UUID;
 @Table(name="artistboard")
 public class Artistboard {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "artistboarduuid", updatable = false, nullable = false)
+    @Column(name = "artistboarduuid", nullable = false)
     private UUID artistboarduuid;
+
+    @PrePersist
+    public void generateUUID(){
+        if(artistboarduuid == null){
+            artistboarduuid = UUID.randomUUID();
+        }
+    }
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="groupuuid")

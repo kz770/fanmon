@@ -11,9 +11,15 @@ import java.util.UUID;
 public class UserGoods {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "usergoodsuuid", updatable = false, nullable = false)
+    @Column(name = "usergoodsuuid", nullable = false)
     private UUID usergoodsuuid;
+
+    @PrePersist
+    public void generateUUID(){
+        if(usergoodsuuid == null){
+            usergoodsuuid = UUID.randomUUID();
+        }
+    }
 
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")

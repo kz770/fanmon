@@ -12,9 +12,15 @@ import java.util.UUID;
 public class Boardnotice {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "noticeuuid", updatable = false, nullable = false)
+    @Column(name = "noticeuuid", nullable = false)
     private UUID noticeuuid;
+
+    @PrePersist
+    public void generateUUID(){
+        if(noticeuuid == null){
+            noticeuuid = UUID.randomUUID();
+        }
+    }
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "fanboarduuid", updatable = false, nullable = false)
