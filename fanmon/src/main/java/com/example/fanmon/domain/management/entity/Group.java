@@ -6,18 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
-@Table(name = "groupartist")
+@Table(name = "group")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GroupArtist {
+public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "groupartistuuid", updatable = false, nullable = false)
-    private String groupartistuuid;
+    @Column(name = "groupuuid", updatable = false, nullable = false)
+    private String groupuuid;
     private String name;
 
     @ManyToOne

@@ -26,4 +26,6 @@ public class Artist {
 
     private String type;
     private LocalDateTime debut;
+    private String email;
+    private String password;
 }
