@@ -1,4 +1,4 @@
-package com.example.fanmon.board.entity;
+package com.example.fanmon.domain.board.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -12,9 +12,15 @@ import java.util.UUID;
 public class Boardnotice {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "noticeuuid", updatable = false, nullable = false)
+    @Column(name = "noticeuuid", nullable = false)
     private UUID noticeuuid;
+
+    @PrePersist
+    public void generateUUID(){
+        if(noticeuuid == null){
+            noticeuuid = UUID.randomUUID();
+        }
+    }
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "fanboarduuid", updatable = false, nullable = false)
@@ -24,10 +30,10 @@ public class Boardnotice {
 
 //    @ManyToOne
 //    @JoinColumn(name="managementuuid")
-//    private Management managementuuid;
+//    private Management management;
 
     private String title;
-    private LocalDateTime postdate;
+    private LocalDateTime createdat;
     private String content;
 
 }

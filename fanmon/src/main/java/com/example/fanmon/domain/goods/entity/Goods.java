@@ -1,4 +1,4 @@
-package com.example.fanmon.goods.entity;
+package com.example.fanmon.domain.goods.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -11,13 +11,19 @@ import java.util.UUID;
 public class Goods {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "goodsuuid", updatable = false, nullable = false)
+    @Column(name = "goodsuuid", nullable = false)
     private UUID goodsuuid;
+
+    @PrePersist
+    public void generateUUID(){
+        if(goodsuuid == null){
+            goodsuuid = UUID.randomUUID();
+        }
+    }
 
 //    @ManyToOne
 //    @JoinColumn(name="managementuuid", nullable = false)
-//    private Management managementuuid;
+//    private Management management;
 
     private String name;
     private long qty;
