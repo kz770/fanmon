@@ -1,10 +1,12 @@
-package com.example.fanmon.domain.management.entity;
+package com.example.fanmon.domain.artist.entity;
 
+import com.example.fanmon.domain.management.entity.Management;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -15,9 +17,16 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Artist {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "artistuuid", updatable = false, nullable = false)
+    @Column(name = "artistuuid", nullable = false)
     private UUID artistuuid;
+
+    @PrePersist
+    public void generateUUID() {
+        if (artistuuid == null) {
+            artistuuid = UUID.randomUUID();
+        }
+    }
+
     private String name;
 
     @ManyToOne
@@ -25,7 +34,8 @@ public class Artist {
     private Management management;
 
     private String type;
-    private LocalDateTime debut;
+    private LocalDate debut;
     private String email;
     private String password;
+    private LocalDate birth;
 }
