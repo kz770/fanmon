@@ -1,6 +1,6 @@
-package com.example.fanmon.board.entity.dao;
+package com.example.fanmon.domain.board.dao;
 
-import com.example.fanmon.board.entity.Artistboard;
+import com.example.fanmon.domain.board.entity.Artistboard;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

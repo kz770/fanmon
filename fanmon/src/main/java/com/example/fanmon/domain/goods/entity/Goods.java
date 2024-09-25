@@ -1,4 +1,4 @@
-package com.example.fanmon.goods.entity;
+package com.example.fanmon.domain.goods.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -17,7 +17,7 @@ public class Goods {
 
 //    @ManyToOne
 //    @JoinColumn(name="managementuuid", nullable = false)
-//    private Management managementuuid;
+//    private Management management;
 
     private String name;
     private long qty;

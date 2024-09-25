@@ -1,4 +1,4 @@
-package com.example.fanmon.board.entity;
+package com.example.fanmon.domain.board.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -24,7 +24,7 @@ public class Boardnotice {
 
 //    @ManyToOne
 //    @JoinColumn(name="managementuuid")
-//    private Management managementuuid;
+//    private Management management;
 
     private String title;
     private LocalDateTime postdate;

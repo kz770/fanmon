@@ -1,4 +1,4 @@
-package com.example.fanmon.board.entity;
+package com.example.fanmon.domain.board.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -18,7 +18,7 @@ public class Artistboard {
 //    수정!
 //    @ManyToOne
 //    @JoinColumn(name="artistuuid", nullable = false)
-//    private Artist artistuuid;
+//    private Artist artist=;
 
     private LocalDateTime postdate;
     private String content;

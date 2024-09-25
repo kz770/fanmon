@@ -1,4 +1,4 @@
-package com.example.fanmon.board.entity;
+package com.example.fanmon.domain.board.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -23,7 +23,7 @@ public class Fancomment {
 
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
-//    private User useruuid;
+//    private User user;
 
     private LocalDateTime postdate;
     private String content;

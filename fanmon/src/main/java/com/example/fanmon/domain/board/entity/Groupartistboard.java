@@ -1,4 +1,4 @@
-package com.example.fanmon.board.entity;
+package com.example.fanmon.domain.board.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,20 +7,19 @@ import java.util.UUID;
 
 @Entity
 @Data
-@Table(name="groupfanboard")
-public class Groupfanboard {
+@Table(name="groupartistboard")
+public class Groupartistboard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "fanboarduuid", updatable = false, nullable = false)
-    private UUID groupfanboarduuid;
+    private UUID groupartistboarduuid;
 
 //    @OneToOne
 //    @JoinColumn(name="groupuuid", nullable = false)
-//    private Group groupuuid;
+//    private Group group;
 
     @OneToOne
-    @JoinColumn(name="fanboarduuid", nullable = false)
-    private Fanboard fanboarduuid;
-
+    @JoinColumn(name="artistboarduuid", nullable = false)
+    private Artistboard artistboard;
 }
