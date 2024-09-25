@@ -1,4 +1,4 @@
-package com.example.fanmon.domain.fandomuser.entity;
+package com.example.fanmon.domain.fandom.entity;
 
 import com.example.fanmon.domain.fandom.entity.Fandom;
 import com.example.fanmon.domain.user.entity.User;
@@ -30,8 +30,6 @@ public class FandomUser {
     @JoinColumn(name="fandomuuid")
     private Fandom fandom;
 
-    @Column(name="username", nullable = false)
-    private String username;
-
+    //username 은 user.name 으로 가져오게 하는걸로
     //fandomname 은 fandom.name 으로 가져오게 하는걸로
 }
