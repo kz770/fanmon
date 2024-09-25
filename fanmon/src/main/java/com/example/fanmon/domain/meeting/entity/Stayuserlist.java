@@ -37,4 +37,5 @@ public class Stayuserlist {
 
     @Enumerated(EnumType.STRING)
     private UserStatusInRoom status = UserStatusInRoom.ERROR_QUIT;
+
 }

@@ -34,7 +34,6 @@ public class Stayroom {
 
     @Enumerated(EnumType.STRING)
     private MeetingroomStatus status = MeetingroomStatus.ERROR_QUIT;
-
     /*
     @ManyToOne
     @JoinColumn(name="managementuuid")

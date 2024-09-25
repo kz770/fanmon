@@ -5,4 +5,5 @@ public enum UserStatusInRoom {
     NORMAL_TERNATION,
     FORCE_EXIT,
     FORCE_QUIT
+
 }

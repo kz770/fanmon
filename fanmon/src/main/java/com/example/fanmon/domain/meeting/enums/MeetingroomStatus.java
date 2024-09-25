@@ -5,4 +5,5 @@ public enum MeetingroomStatus {
     NORMAL_TERNATION,
     PAUSE,
     FORCE_QUIT
+
 }
