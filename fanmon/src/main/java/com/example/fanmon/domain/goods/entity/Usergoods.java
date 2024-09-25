@@ -1,5 +1,6 @@
 package com.example.fanmon.domain.goods.entity;
 
+import com.example.fanmon.domain.artist.entity.Group;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,6 +25,10 @@ public class Usergoods {
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
 //    private User user;
+
+    @ManyToOne
+    @JoinColumn(name="groupuuid")
+    private Group group;
 
     @ManyToOne
     @JoinColumn(name="goodsuuid")

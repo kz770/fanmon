@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -29,6 +30,12 @@ public class Fanboard {
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
 //    private User user;
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Boardnotice> boardnotice;
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Fanboard> fanboard;
 
     private String title;
     private LocalDateTime createdat;
