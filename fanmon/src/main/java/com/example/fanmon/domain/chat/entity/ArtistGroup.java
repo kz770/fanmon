@@ -20,7 +20,7 @@ public class ArtistGroup {
 
 //    @ManyToOne(cascade = CascadeType.REMOVE)
 //    @JoinColumn(name="groupartistname", updatable = true, nullable = false)
-//    private GroupArtist groupArtist;
+//    private Group group;
 
 
 //    @ManyToOne
