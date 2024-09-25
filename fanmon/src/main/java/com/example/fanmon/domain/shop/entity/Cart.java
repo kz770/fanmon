@@ -18,11 +18,11 @@ public class Cart {
     @Column(name = "cartsequence", updatable = false, nullable = false)
     private Long crtsequence;
 
-/*    @ManyToOne
+/*    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "useruuid", referencedColumnName = "useruuid", insertable = true, updatable = true)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "goodsuuid", referencedColumnName = "goodsuuid", insertable = true, updatable = true)
     private Goods goods;*/
     private LocalDateTime createdat;

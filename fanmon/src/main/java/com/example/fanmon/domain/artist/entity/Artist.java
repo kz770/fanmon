@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -29,7 +28,7 @@ public class Artist {
 
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="managementuuid", insertable=true, updatable=true)
     private Management management;
 

@@ -1,6 +1,6 @@
 package com.example.fanmon.domain.board.entity;
 
-import com.example.fanmon.domain.artist.entity.Group;
+import com.example.fanmon.domain.artist.entity.Team;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,7 +24,7 @@ public class Fanboard {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="groupuuid")
-    private Group group;
+    private Team team;
 
 //    @ManyToOne
 //    @JoinColumn(name="useruuid")
