@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-@Table(name = "group")
+@Table(name = "team")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
