@@ -35,7 +35,7 @@ public class User {
     @Column(name="name", nullable = false)
     private String name;
 
-    @Column(name="email", nullable = false, unique = true)
+    @Column(name="email", nullable = true, unique = true)
     private String email;
 
     //추후 소셜로그인 기능 구현 위해 nullable true 로 했습니다
