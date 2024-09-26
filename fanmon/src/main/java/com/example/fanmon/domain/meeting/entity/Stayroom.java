@@ -1,5 +1,7 @@
 package com.example.fanmon.domain.meeting.entity;
 
+import com.example.fanmon.domain.artist.entity.Artist;
+import com.example.fanmon.domain.management.entity.Management;
 import com.example.fanmon.domain.meeting.enums.MeetingroomStatus;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -30,11 +32,11 @@ public class Stayroom {
     @Column(nullable = false)
     private LocalDateTime createdat;
 
-    private LocalDateTime meetingroomstartedat;
+    private LocalDateTime meetingstartedat;
 
     @Enumerated(EnumType.STRING)
     private MeetingroomStatus status = MeetingroomStatus.ERROR_QUIT;
-    /*
+
     @ManyToOne
     @JoinColumn(name="managementuuid")
     private Management management;
@@ -42,5 +44,6 @@ public class Stayroom {
     @ManyToOne
     @JoinColumn(name="artistuuid")
     private Artist artist;
-    */
+
+    private LocalDateTime meetingendedat;
 }
