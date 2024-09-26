@@ -25,6 +25,7 @@ public class Goods {
 //    @JoinColumn(name="managementuuid", nullable = false)
 //    private Management management;
 
+    private String category;
     private String name;
     private long qty;
     private long price;
