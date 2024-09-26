@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -15,21 +14,21 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Group {
+public class Team {
     @Id
-    @Column(name = "groupuuid", nullable = false)
-    private UUID groupuuid;
+    @Column(name = "teamuuid", nullable = false)
+    private UUID teamuuid;
 
     @PrePersist
     public void generateUUID() {
-        if (groupuuid == null) {
-            groupuuid = UUID.randomUUID();
+        if (teamuuid == null) {
+            teamuuid = UUID.randomUUID();
         }
     }
 
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="managementuuid", insertable=true, updatable=true)
     private Management management;
 
