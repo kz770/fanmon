@@ -1,6 +1,7 @@
 package com.example.fanmon.domain.board.entity;
 
 import com.example.fanmon.domain.artist.entity.Team;
+import com.example.fanmon.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -23,19 +24,13 @@ public class Fanboard {
         }
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="groupuuid")
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @JoinColumn(name="teamuuid", nullable = false)
     private Team team;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="useruuid")
-//    private User user;
-
-    @OneToMany(cascade = CascadeType.REMOVE)
-    private List<Boardnotice> boardnotice;
-
-    @OneToMany(cascade = CascadeType.REMOVE)
-    private List<Fancomment> fanconmment;
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @JoinColumn(name="useruuid", nullable = false)
+    private User user;
 
     private String title;
     private LocalDateTime createdat;

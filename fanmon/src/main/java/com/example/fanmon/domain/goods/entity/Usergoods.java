@@ -1,6 +1,6 @@
 package com.example.fanmon.domain.goods.entity;
 
-import com.example.fanmon.domain.artist.entity.Group;
+import com.example.fanmon.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,11 +22,11 @@ public class Usergoods {
         }
     }
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="useruuid")
-//    private User user;
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @JoinColumn(name="useruuid")
+    private User user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     @JoinColumn(name="goodsuuid")
     private Goods goods;
 

@@ -1,5 +1,6 @@
 package com.example.fanmon.domain.board.entity;
 
+import com.example.fanmon.domain.artist.entity.Artist;
 import com.example.fanmon.domain.artist.entity.Team;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,13 +23,13 @@ public class Artistboard {
         }
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="groupuuid")
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @JoinColumn(name="teamuuid", nullable = false)
     private Team team;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="artistuuid", nullable = false)
-//    private Artist artist;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name="artistuuid", nullable = false)
+    private Artist artist;
 
     private LocalDateTime createdat;
     private String content;

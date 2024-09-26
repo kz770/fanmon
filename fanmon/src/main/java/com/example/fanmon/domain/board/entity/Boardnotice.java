@@ -1,5 +1,6 @@
 package com.example.fanmon.domain.board.entity;
 
+import com.example.fanmon.domain.management.entity.Management;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,13 +23,13 @@ public class Boardnotice {
         }
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="fanboarduuid")
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @JoinColumn(name="fanboarduuid", nullable = false)
     private Fanboard fanboard;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="managementuuid")
-//    private Management management;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name="managementuuid", nullable = false)
+    private Management management;
 
     private String title;
     private LocalDateTime createdat;
