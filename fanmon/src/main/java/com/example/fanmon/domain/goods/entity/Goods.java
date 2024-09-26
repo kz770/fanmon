@@ -31,6 +31,7 @@ public class Goods {
     @JoinColumn(name="teamuuid", nullable = false)
     private Team team;
 
+    private String category;
     private String name;
     private long qty;
     private long price;
