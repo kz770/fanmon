@@ -1,5 +1,7 @@
 package com.example.fanmon.domain.chat.controller;
 
+import com.example.fanmon.domain.chat.service.ChatService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +11,10 @@ import java.util.Map;
 @RestController
 public class ChatController {
 
-    @GetMapping("/test")
+    @Autowired
+    ChatService service;
+
+    @GetMapping("/chat")
         public Map<String, Object> testHandler() {
             Map<String, Object> res = new HashMap<>();
             res.put("SUCCESS", true);
