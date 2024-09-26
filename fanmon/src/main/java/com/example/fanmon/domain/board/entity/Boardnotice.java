@@ -1,5 +1,6 @@
 package com.example.fanmon.domain.board.entity;
 
+import com.example.fanmon.domain.artist.entity.Team;
 import com.example.fanmon.domain.management.entity.Management;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -24,8 +25,8 @@ public class Boardnotice {
     }
 
     @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
-    @JoinColumn(name="fanboarduuid", nullable = false)
-    private Fanboard fanboard;
+    @JoinColumn(name="teamuuid", nullable = false)
+    private Team team;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="managementuuid", nullable = false)
