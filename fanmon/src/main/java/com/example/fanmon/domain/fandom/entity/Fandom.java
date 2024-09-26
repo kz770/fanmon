@@ -1,5 +1,6 @@
 package com.example.fanmon.domain.fandom.entity;
 
+import com.example.fanmon.domain.artist.entity.Artist;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -23,9 +24,9 @@ public class Fandom {
     @Column(name="name", nullable=false)
     private String name;
 
-//    @ManyToOne
-//    @JoinColumn(name="artistuuid")
-//    private Artist artist;
+    @ManyToOne
+    @JoinColumn(name="artistuuid")
+    private Artist artist;
 
     // artistuuid, artistname 은 Artist.name 이런 식으로 가져오는 걸로
 }
