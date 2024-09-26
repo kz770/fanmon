@@ -22,11 +22,11 @@ public class FandomUser {
         }
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="useruuid")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="fandomuuid")
     private Fandom fandom;
 
