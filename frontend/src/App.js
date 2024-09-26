@@ -1,21 +1,15 @@
-import {useEffect, useState} from "react";
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import ChatPage from "./pages/ChatPage";
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("/test")
-        .then((response) => response.json())
-        .then((json) => setMessage(json.SUCCESS_TEXT));
-  }, []);
 
   return (
-      <div className="App">
-        <header className="App-header">
-          {message}
-        </header>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/chat" element={<ChatPage />} />
+        </Routes>
+      </Router>
   );
 }
 
