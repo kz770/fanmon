@@ -16,7 +16,6 @@ import java.util.UUID;
 @Data
 public class Stayroom {
     @Id
-    @Column(nullable = false)
     private UUID stayuuid;
 
     @PrePersist
