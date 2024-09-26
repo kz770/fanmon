@@ -14,7 +14,6 @@ import java.util.UUID;
 @Data
 public class Stayuserlist {
     @Id
-    @Column(updatable = false, nullable = false)
     private UUID stayuserlistuuid;
 
     @PrePersist
@@ -29,7 +28,6 @@ public class Stayuserlist {
     private Stayroom stayroom;
 
 
-    @Id
     @ManyToOne
     @JoinColumn(name="useruuid")
     private User user;
