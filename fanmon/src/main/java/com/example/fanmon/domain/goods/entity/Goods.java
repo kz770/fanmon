@@ -1,5 +1,7 @@
 package com.example.fanmon.domain.goods.entity;
 
+import com.example.fanmon.domain.artist.entity.Team;
+import com.example.fanmon.domain.management.entity.Management;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,9 +23,13 @@ public class Goods {
         }
     }
 
-//    @ManyToOne
-//    @JoinColumn(name="managementuuid", nullable = false)
-//    private Management management;
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @JoinColumn(name="managementuuid", nullable = false)
+    private Management management;
+
+    @ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
+    @JoinColumn(name="teamuuid", nullable = false)
+    private Team team;
 
     private String name;
     private long qty;
